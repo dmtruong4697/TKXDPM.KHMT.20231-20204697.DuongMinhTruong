@@ -40,7 +40,7 @@ public class PaymentTransaction {
     public void save(int orderId) throws SQLException {
         this.orderID = orderId;
         Statement stm = AIMSDB.getConnection().createStatement();
-        String query = "INSERT INTO PaymentTransaction ( orderID, createAt, content) " +
+        String query = "INSERT INTO 'Transaction' ( orderID, createAt, content) " +
                 "VALUES ( ?, ?, ?)";
         try (PreparedStatement preparedStatement = AIMSDB.getConnection().prepareStatement(query)) {
             preparedStatement.setInt(1, orderID);
